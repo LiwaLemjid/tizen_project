@@ -12,7 +12,7 @@
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ELeDwLyH4DzniEWybKP8ZK0e3Gsw+1FDXhomr+9ONjs=</DigestValue>
+<DigestValue>GLZYndF/Zt//qox6UUyuMq1aRuHXabbgtUeXlQqyCms=</DigestValue>
 </Reference>
 <Reference URI="cart.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -188,7 +188,7 @@
 </Reference>
 <Reference URI="js%2Fscripts%2Flogin.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>qm7HMCeSWGVfTX+oaFwJ1qGD+k4oibfficQH/oYDdwQ=</DigestValue>
+<DigestValue>y3w4P0Df6CNhEWH+kJGePy697GfHagen24rs6XEXyao=</DigestValue>
 </Reference>
 <Reference URI="lib%2Fjquery.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1275,9 +1275,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-fW3q7EIdzkY3m1TffPLOhgWRmkyeaLwcQltyzVO1/pfo37D3qNd39yZ38l/f/SsYHUXJWYIPFqSo
-tfGNxmQdySihWFTwjUjQtNx89yzCmNG6IJDMVo8xkdRhJS+5+Y1tfgdFu4ksyVjc3sbO0NgVLpGa
-mFkkk6/4RkurWJsgNLU=
+AMFMp4T/hJUSuYBqcAmSVISa7i2emBfJjD8sRBeXcxmC/qTorvCd3jCA8LnOKCCCHrYk7LdB4MtK
+AqvDfCGG2MYQp92VYCYarL/Tkwu3vaPfuD52Ni8WSiNWdggXPd04hTLP+LJozNWhky1E5+MpqvWB
+Wrn3ROM703VcXPRIVB8=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

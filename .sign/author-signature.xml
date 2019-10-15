@@ -184,7 +184,7 @@
 </Reference>
 <Reference URI="js%2Fscripts%2Flogin.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>qm7HMCeSWGVfTX+oaFwJ1qGD+k4oibfficQH/oYDdwQ=</DigestValue>
+<DigestValue>y3w4P0Df6CNhEWH+kJGePy697GfHagen24rs6XEXyao=</DigestValue>
 </Reference>
 <Reference URI="lib%2Fjquery.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1271,9 +1271,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-MTn4GEouZ0UHj1fZwx6c3L1HYMa30Tc25r7IKDNYCG8GSmBJDaSRiF3MOpMu4Cp4uX2+eppfRKLq
-GtPCM+BDwKCyrIudH/vWNmIqalT1iQNsoYbmMFIKx75dnvOyP+4bBX0Y4kEbJx3ZibKeejzIxOo9
-hDOA15CiKmoYgy0ui/g=
+UqHzhW5oHPkuEv/Hs/WOp7Il+AZdPrk91w0MAaSEVgsuVIa2cfIoPFJAd+8JqkIyIploVC/YNpGI
+nycuoYnA1HKwoxyHL3PSFYADE00oPFV+kLJEkDTJVnWx8fHqqpxWort9H/wPfLnT/I0AtPMyaR58
+39dI4IiJAb98I4Reefg=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
