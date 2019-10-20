@@ -54,6 +54,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=</DigestValue>
 </Reference>
+<Reference URI="img%2Faccessories.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>1lUQrTWbDRPX3TFfeKqnuzzkdSIFewLynvq28HUNkgY=</DigestValue>
+</Reference>
 <Reference URI="img%2Fapple.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>ZEIxusgwb1dz9kcAWqjTQNrMm3AkaE4I3goevbUiRTg=</DigestValue>
@@ -126,6 +130,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>zxH/3W8rRh56BpBwbxyuAxlQeGXaB0RbL0o5oBWtIqo=</DigestValue>
 </Reference>
+<Reference URI="img%2Fplaceholder.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>NFd1WROvlfo+DuMzsDW0+BwNaWRpOVdBRxizdfH+1NQ=</DigestValue>
+</Reference>
 <Reference URI="img%2Fproduct2.jpg">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>o9wdJm/MTML7vQwR8T6cGZduHdkh72hIhcBENqCkuZE=</DigestValue>
@@ -154,13 +162,17 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>A9d1KNnYB2OTkotHrbk74gMwNQ7k2eMrI/TWsaT9QwE=</DigestValue>
 </Reference>
+<Reference URI="img%2Fvape.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>obvYAD24H9DDyiKxbN9aqZ6A/X5J+2EVZ+sqjJ4dV5A=</DigestValue>
+</Reference>
 <Reference URI="img%2Fwhatsapp.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>LjagvVd96l3TgqKDCvN/5xeP+P2J9JZ3JVHj4wT5NxM=</DigestValue>
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Z0h8o25L5t4e+GMLYvbny0Jd5D2EjUDSPUN3Z/DdD/I=</DigestValue>
+<DigestValue>MEw2jjMhwyk20OaDMgS/mYU/ey72B+5y7Tz6Q5Q0YS8=</DigestValue>
 </Reference>
 <Reference URI="input-group.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -184,7 +196,27 @@
 </Reference>
 <Reference URI="js%2Fscripts%2Flogin.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>y3w4P0Df6CNhEWH+kJGePy697GfHagen24rs6XEXyao=</DigestValue>
+<DigestValue>Nw3y6XhQg6QkTad7dvKfbtRuvXft9uz/NJ30oB76wCo=</DigestValue>
+</Reference>
+<Reference URI="js%2Fscripts%2Fws.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>GsDTE+/I/DUjRmR0yrni3gaddJnF6e5YIhuy6Ic7xsk=</DigestValue>
+</Reference>
+<Reference URI="js%2Fviews.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>x8M0IpwaZhNt8TAFw4H+zHgxeVMzsufqQJHGaQM9JqE=</DigestValue>
+</Reference>
+<Reference URI="js%2Fviews%2FcommonViews.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>x8M0IpwaZhNt8TAFw4H+zHgxeVMzsufqQJHGaQM9JqE=</DigestValue>
+</Reference>
+<Reference URI="js%2Fviews%2Fproducts.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Fl8VIhjuzaqrO72F8kP8260XYrCPTShV9IZFQcSXSe8=</DigestValue>
+</Reference>
+<Reference URI="js%2Fviews%2Fprofile.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>7UcuykuzvjchhkwG1JgBIwcm55DYtPwawrhiLDmpgkY=</DigestValue>
 </Reference>
 <Reference URI="lib%2Fjquery.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1172,11 +1204,11 @@
 </Reference>
 <Reference URI="profile-edit.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>4MvSfDaFXyCpbHNX20kMPcWYd2Kk4wF2A5e2JCpXvkw=</DigestValue>
+<DigestValue>Fps+4VGJvqyj9q2sHr+kXNmYdyzqzv5BsrLJYqJ4EPo=</DigestValue>
 </Reference>
 <Reference URI="profile.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>CcXx6zwMYGuhhleBf76llCOS5C5ehDHjJqPaSaBH+gU=</DigestValue>
+<DigestValue>dxjPuLAP8/PBBV1EttYs8MCqvK6t9bKITvyMXUyHLZQ=</DigestValue>
 </Reference>
 <Reference URI="setting.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1271,9 +1303,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-UqHzhW5oHPkuEv/Hs/WOp7Il+AZdPrk91w0MAaSEVgsuVIa2cfIoPFJAd+8JqkIyIploVC/YNpGI
-nycuoYnA1HKwoxyHL3PSFYADE00oPFV+kLJEkDTJVnWx8fHqqpxWort9H/wPfLnT/I0AtPMyaR58
-39dI4IiJAb98I4Reefg=
+EMZteXSw+ACZU5zDJyA3qAsvBLmwm9bc0yJCKnEMpyVfRy4zvG+EkvXsypsVcM6CFXufloztQ7p5
+zyDjHMFr88EQm/1VYEqSqCgZnrhS/0GCfPvya7C83eTJ/iM6Z4mjfh6fe2WtTxrLkdvE7O6bmBef
+dMeDBTMh5IeAWJaSznc=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

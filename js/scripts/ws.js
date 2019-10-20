@@ -9,13 +9,7 @@ function getUserArticles(id) {
 }
 
 function getFavorites(id) {
-    $.get(url + "AffichageArticles.php?&action=MesArticlesFavoris&id_publicateur=" + id).done(
-        (data) => {
-            let favorites = JSON.parse(data);
-            favorites = favorites.map(f => f.id_article);
-            console.log(favorites);
-        }
-    )
+    return $.get(url + "AffichageArticles.php?&action=listeArticlesFavoris&id_publicateur=" + id);
 }
 
 function getArticlesByCategory(category) {

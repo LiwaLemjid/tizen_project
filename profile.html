@@ -157,7 +157,13 @@
                 }
             )
 
-            getFavorites(50);
+            getFavorites(user.id).done(
+                (data) => {
+                    favorites = JSON.parse(data);
+                    $("#favoritesList").html(renderProfileProducts(favorites));
+                    $("#favoritesCount").text(favorites.length);
+                }
+            )
 
         });
     </script>

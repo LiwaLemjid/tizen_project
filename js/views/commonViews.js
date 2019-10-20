@@ -45,8 +45,8 @@ function renderFooter() {
                 </a>
             </div>
             <div class="col-auto">
-                <a href="cart.html" class="btn btn-default shadow centerbutton">
-                    <i class="material-icons">local_mall</i>
+                <a href="addProduct.html" class="btn btn-default shadow centerbutton">
+                    <i class="material-icons">add</i>
                 </a>
             </div>
             <div class="col-auto">
