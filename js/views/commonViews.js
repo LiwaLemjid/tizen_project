@@ -1,4 +1,4 @@
-var user = JSON.parse(localStorage.getItem("user"));
+var user = JSON.parse(sessionStorage.getItem("user"));
 
 function renderSideMenu() {
     let menuTemplate = `
@@ -14,14 +14,10 @@ function renderSideMenu() {
             <div class="col">
                 <h5 class="subtitle text-uppercase"><span>Menu</span></h5>
                 <div class="list-group main-menu">
-                    <a href="index.html" class="list-group-item list-group-item-action active">Store</a>
-                    <a href="notification.html" class="list-group-item list-group-item-action">Notification <span class="badge badge-dark text-white">2</span></a>
-                    <a href="all-products.html" class="list-group-item list-group-item-action">All Products</a>
-                    <a href="my-order.html" class="list-group-item list-group-item-action">My Order</a>
-                    <a href="profile.html" class="list-group-item list-group-item-action">My Profile</a>
-                    <a href="controls.html" class="list-group-item list-group-item-action">Pages Controls <span class="badge badge-light ml-2">Check</span></a>
+                    <a href="index.html" class="list-group-item list-group-item-action active">Home</a>
+                    <a href="inbox.html" class="list-group-item list-group-item-action">Messages <span class="badge badge-dark text-white">2</span></a>
                     <a href="setting.html" class="list-group-item list-group-item-action">Settings</a>
-                    <a href="login.html" class="list-group-item list-group-item-action mt-4">Logout</a>
+                    <a onclick="localStorage.clear()" href="login.html" class="list-group-item list-group-item-action mt-4">Logout</a>
                 </div>
             </div>
         </div>
@@ -29,19 +25,19 @@ function renderSideMenu() {
     return menuTemplate;
 }
 
-function renderFooter() {
+function renderFooter(activeTab) {
     let template = `            
 <div class="no-gutters">
     <div class="col-auto mx-auto">
         <div class="row no-gutters justify-content-center">
             <div class="col-auto">
-                <a href="index.html" class="btn btn-link-default ">
+                <a href="index.html" class="btn btn-link-default ${(activeTab==='index') ? 'active' : ''}">
                     <i class="material-icons">store_mall_directory</i>
                 </a>
             </div>
             <div class="col-auto">
-                <a href="statistics.html" class="btn btn-link-default">
-                    <i class="material-icons">insert_chart_outline</i>
+                <a href="inbox.html" class="btn btn-link-default ${(activeTab==='inbox') ? 'active' : ''}">
+                    <i class="material-icons">message</i>
                 </a>
             </div>
             <div class="col-auto">
@@ -50,12 +46,12 @@ function renderFooter() {
                 </a>
             </div>
             <div class="col-auto">
-                <a href="favorite-products.html" class="btn btn-link-default">
+                <a href="favorite-products.html" class="btn btn-link-default ${(activeTab==='favorites') ? 'active' : ''}">
                     <i class="material-icons">favorite</i>
                 </a>
             </div>
             <div class="col-auto">
-                <a href="profile.html" class="btn btn-link-default active">
+                <a href="profile.html" class="btn btn-link-default ${(activeTab==='profile') ? 'active' : ''}">
                     <i class="material-icons">account_circle</i>
                 </a>
             </div>

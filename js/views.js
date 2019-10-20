@@ -1,4 +1,4 @@
-var user = JSON.parse(localStorage.getItem("user"));
+var user = JSON.parse(sessionStorage.getItem("user"));
 
 function renderSideMenu() {
     let menuTemplate = `

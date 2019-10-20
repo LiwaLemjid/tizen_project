@@ -30,7 +30,12 @@
         <div class="col align-self-center text-white text-center">
             <img src="img/logo.png" alt="logo">
             <h1><span class="font-weight-light">Go</span>Fruit</h1>
-            <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     </div>
     <div class="row no-gutters vh-100 proh bg-template">
@@ -58,11 +63,7 @@
 
                 <div class="row">
                     <div class="col-auto">
-                            <!-- 
-                        <a href="index.html" class="btn btn-lg btn-default btn-rounded shadow"><span>Sign in</span><i class="material-icons">arrow_forward</i></a>
-                         -->
-                       <a onclick="login()" class="btn btn-lg btn-default btn-rounded shadow"><span>Sign in</span><i class="material-icons">arrow_forward</i></a>
-                         
+                        <a onclick="handleLogin()" class="btn btn-lg btn-default btn-rounded shadow"><span>Sign in</span><i class="material-icons">arrow_forward</i></a>
                     </div>
                     <div class="col align-self-center text-right pl-0">
                         <a href="forgot-password.html">Forgot Password?</a>
@@ -87,7 +88,24 @@
     <!-- template custom js -->
     <script src="js/main.js"></script>
     <script src="js/scripts/login.js"></script>
+    <script>
+        $(window).on('load', function() {
+            var user = localStorage.getItem('user');
+            if (user) {
+                user = JSON.parse(user);
+                let pwd = user.password;
+                let email = user.email;
+                login(pwd, email, true);
+            }
+        });
 
+        function handleLogin() {
+            let pwd = $("#inputPassword").val();
+            let email = $("#inputEmail").val();
+            let rememberMe = $("#rememberme").is(':checked');
+            login(pwd, email, rememberMe);
+        }
+    </script>
 </body>
 
 </html>

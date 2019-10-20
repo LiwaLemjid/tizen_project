@@ -188,7 +188,7 @@
             });
 
             $("#sidebar").html(renderSideMenu());
-            $("#footer").html(renderFooter());
+            $("#footer").html(renderFooter('index'));
             var products = [];
             getArticles().done(
                 data => {

@@ -1,11 +1,12 @@
-function login() {
+function login(pwd, mail, rememberMe) {
     var url = "https://vaping-tn.herokuapp.com/";
-    var pwd = $("#inputPassword").val();
-    var mail = $("#inputEmail").val();
     $.get(url + "LoginServiceController.php?action=Authentification&email=" + mail + "&password=" + pwd, function(data) {
             data = JSON.parse(data);
             if (data.length > 0) {
-                localStorage.setItem("user", JSON.stringify(data[0]));
+                sessionStorage.setItem("user", JSON.stringify(data[0]));
+                if (rememberMe) {
+                    localStorage.setItem("user", JSON.stringify(data[0]));
+                }
                 location.href = "index.html";
                 return;
             }
@@ -14,5 +15,4 @@ function login() {
         .fail(function(error) {
             alert("Failed to connect");
         })
-
 }
