@@ -49,15 +49,15 @@
                 <div class="row mt-3">
                     <div class="col-md-6">
                         <div class="form-group has-error  float-label">
-                            <input id="form_name" type="text" name="name" class="form-control is-invalid" required="required">
-                            <label class="form-control-label" for="form_name">Description</label>
+                            <input id="description" type="text" name="name" class="form-control is-invalid" required="required">
+                            <label class="form-control-label" for="description">Description</label>
                             <div class="help-text" hidden>Description is required.</div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group float-label">
-                            <input id="form_lastname" type="number" min="0" name="surname" class="form-control" required="required">
-                            <label class="form-control-label" for="form_lastname">Price *</label>
+                            <input id="price" type="number" min="0" name="surname" class="form-control" required="required">
+                            <label class="form-control-label" for="price">Price </label>
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
@@ -65,12 +65,12 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group float-label active">
-                            <select id="form_need" name="need" class="form-control" required="required">
-                                <option value="Request quotation" selected >Vape</option>
-                                <option value="Request order status">Accessory</option>
-                                <option value="Request copy of an invoice">Liquid</option>
+                            <select id="category" name="need" class="form-control" required="required">
+                                <option value="Vape" selected >Vape</option>
+                                <option value="Accessory">Accessory</option>
+                                <option value="Liquid">Liquid</option>
                             </select>
-                            <label class="form-control-label" for="form_need">Please specify category</label>
+                            <label class="form-control-label" for="category">Please specify category</label>
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
@@ -93,8 +93,6 @@
                         <button onclick="next()" class="btn btn-default btn-rounded btn-lg shadow">NEXT</button>
                     </div>
                 </div>
-
-
                 <!-- page content ends -->
             </div>
 
@@ -117,12 +115,45 @@
     <script src="js/scripts/ws.js"></script>
     <script src="js/views/commonViews.js"></script>
     <script src="js/views/addProduct.js"></script>
+    <script src="js/scripts/ws.js"></script>
     <!-- page level script -->
     <script>
+
+        product = {} ; 
+
         $(window).on('load', function() {
             $("#footer").html(renderFooter(''));
-
         });
+
+        function next() {
+            product["description"] = $("#description").val() ; 
+            product["price"] = $("#price").val() ; 
+            product["category"] = $("#category").val() ; 
+            getYoutubeSuggestions(product.description,3).done(
+                function (data) {
+                    let videos = JSON.parse(data) ;
+                    console.log(videos);
+                    $("#content").html(renderYoutubeSuggestions(videos));
+                }
+            );
+        }
+
+
+        function selectVideo(id) {
+            product["videoId"] = id ; 
+            addProduct(product,user).done(
+                function (response) {
+                    console.log(response);
+                    location.href = "index.html";
+                }
+            ).fail(
+                function (error) {
+                    console.log(error);
+                }
+            ) ;
+            console.log(product) ;
+        }
+
     </script>
 
 
