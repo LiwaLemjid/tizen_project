@@ -1379,6 +1379,11 @@ body a.btn-light-grey {
     width: 20px;
 }
 
+.avatar-30 {
+    height: 30px;
+    width: 30px;
+}
+
 .avatar-40 {
     height: 40px;
     width: 40px;
@@ -2117,7 +2122,9 @@ pre {
 
 /* media query */
 
-
+.messageSent {
+    text-align : right;
+}
 
 @media screen and (min-width:993px) {
     .sidebar {

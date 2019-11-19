@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-  </head>
-  <body>
+</head>
+
+<body>
+
     <body>
-      <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
-      <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-      <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
 
-      <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-      <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
-
-      <!-- Add Firebase products that you want to use -->
-      <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-      <script>
-        const config = {
-          apiKey: "AIzaSyDwC0g34NJBWXyaj8zW_McvQ75m_mz7oFo",
-          authDomain: "messagerie-23212.firebaseapp.com",
-          databaseURL: "https://messagerie-23212.firebaseio.com",
-          projectId: "messagerie-23212",
-          storageBucket: "messagerie-23212.appspot.com",
-          messagingSenderId: "400412680066",
-          appId: "1:400412680066:web:d326bb25d9ac2703b5f99b",
-          measurementId: "G-JZEH5HC7LX"
-        };
-        if (!firebase.apps.length) {
-          console.log(firebase.apps);
-          firebase.initializeApp(config);
-          //this.database = firebase.database();
-          //console.log(this.firebase);
-        }
-        this.database = firebase.database();
-        let userRef = this.database.ref("users/" + "userId");
-        userRef.child("mike").set({
-          firstName: "value.firstName",
-          lastName: "value.lastName",
-        });
-      </script>
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+        <script>
+            function sendMessage(sender, receiver, message) {
+                let discussionId = sender + '-' + receiver
+                var newMessageRef = firebase.database().ref('/discussion' + discussionId).push();
+                newMessageRef.set({
+                    sender,
+                    receiver,
+                    message
+                });
+            }
+            const config = {
+                apiKey: "AIzaSyDwC0g34NJBWXyaj8zW_McvQ75m_mz7oFo",
+                authDomain: "messagerie-23212.firebaseapp.com",
+                databaseURL: "https://messagerie-23212.firebaseio.com",
+                projectId: "messagerie-23212",
+                storageBucket: "messagerie-23212.appspot.com",
+                messagingSenderId: "400412680066",
+                appId: "1:400412680066:web:d326bb25d9ac2703b5f99b",
+                measurementId: "G-JZEH5HC7LX"
+            };
+            if (!firebase.apps.length) {
+                firebase.initializeApp(config);
+                //this.database = firebase.database();
+                //console.log(this.firebase);
+            }
+            this.database = firebase.database();
+            var starCountRef = firebase.database().ref('/');
+            starCountRef.on('value', function(snapshot) {
+                console.log(snapshot.val());
+            });
+        </script>
     </body>
-  </body>
+</body>
+
 </html>

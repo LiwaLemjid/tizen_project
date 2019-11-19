@@ -21,13 +21,28 @@ function getArticlesById(id) {
 }
 
 function getFirebaseImage(img) {
-    return "https://firebasestorage.googleapis.com/v0/b/tizenproject-4c5c3.appspot.com/o/images%2F" + img + "?alt=media&token=2e50c4be-7079-46e9-ae7b-dbc15f810ff4";
+    return `https://firebasestorage.googleapis.com/v0/b/messagerie-23212.appspot.com/o/${img}?alt=media&token=f5e504a6-6821-452e-9750-d7e1d0ab1e1c`;
 }
 
-function getYoutubeSuggestions(keyword,count) {
-    return $.get(url + "youtube_search.php?titre=" + keyword + "&count=" + count );
+function getYoutubeSuggestions(keyword, count) {
+    return $.get(url + "youtube_search.php?titre=" + keyword + "&count=" + count);
 }
 
-function addProduct(product,user) {
-    return $.get(url + "FormulaireAddPost.php?action=ADDPOST&nomprenom="+user.nom+" "+user.prenom + "&description=" + product.description+ "&prix="+product.price+"&categorie="+product.category+"&idPublicateur"+user.id+"&videoid"+product.videoId);
+function addProduct(product, user) {
+    var now = new Date();
+    /*  $sql = "INSERT INTO `articles`(`nomprenom` , `description`, `date`, `time`, `prix`, `idpublicateur` ,`categorie`, `image` 
+    ,`image_publicateur`,`ville`,`lat`,`lng` ,`videoid`) VALUES
+    */
+    return $.get(url + "FormulaireAddPost.php?action=ADDPOST&nomprenom=" + user.nom + " " + user.prenom + "&description=" + product.description +
+        "&prix=" + product.price + "&categorie=" + product.category + "&idpublicateur=" + user.id + "&videoid=" + product.videoId +
+        "&latitude=1" + "&langitude=1" + "&ville=Chargueya" + "&image=" + product.image + "&image_publicateur=0" + "&date=0&time=0"
+    );
+}
+
+async function getProfile(id) {
+    return new Promise(resolve => {
+        $.get(url + "LoginServiceController.php?action=GETPROFILE&id=" + id).then(
+            response => resolve(JSON.parse(response)[0])
+        )
+    });
 }

@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Maxartkiller">
 
-    <title>Inbox · GoFruit</title>
+    <title>Notification · GoFruit</title>
 
     <!-- Material design icons CSS -->
     <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
@@ -34,6 +34,7 @@
 <body>
     <div class="row no-gutters vh-100 loader-screen">
         <div class="col align-self-center text-white text-center">
+            <img src="img/logo.png" alt="logo">
             <h1><span class="font-weight-light">Go</span>Fruit</h1>
             <div class="laoderhorizontal">
                 <div></div>
@@ -43,13 +44,11 @@
             </div>
         </div>
     </div>
-    <div id="sidebar" class="sidebar">
-    </div>
     <div class="wrapper">
         <div class="header">
             <div class="row no-gutters">
                 <div class="col-auto">
-                    <button class="btn  btn-link text-dark menu-btn"><img src="img/menu.png" alt=""><span class="new-notification"></span></button>
+                    <a href="inbox.html" class="btn  btn-link text-dark"><i class="material-icons">navigate_before</i></a>
                 </div>
                 <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
                 <div class="col-auto">
@@ -58,19 +57,26 @@
             </div>
         </div>
         <div class="container">
-            <input onkeyup="searchMessage()" id="search" type="text" class="form-control form-control-lg search my-3" placeholder="Search message">
-
-            <div class="row">
-                <div class="col-12 px-0">
-                    <div class="list-group list-group-flush my-3" id="messagesContainer">
-                        loading messages...
+            <div id="discussionHeader"></div>
+            <div id="discussionContent">
+                <hr>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row mt-3">
+                    <div class="col md-8">
+                        <div class="form-group has-error  float-label">
+                            <div class="row">
+                                <div class="col-10">
+                                    <input id="message" type="text" name="name" class="form-control">
+                                </div>
+                                <div id="sendButton" class="col-2" style="padding-right: 0;padding-left: 0;"><img src="img/send.png"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
-        </div>
-        <div id="footer" class="footer">
         </div>
     </div>
     <!-- jquery, popper and bootstrap js -->
@@ -88,7 +94,6 @@
     <!-- chosen multiselect js -->
     <script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
 
-    <!-- template custom js -->
     <script src="js/main.js"></script>
     <script src="js/views/commonViews.js"></script>
 
@@ -101,18 +106,30 @@
 
     <script src="js/views/messagerie.js"></script>
     <script src="js/scripts/ws.js"></script>
+
     <!-- page level script -->
     <script>
         $(window).on('load', async function() {
-            $("#sidebar").html(renderSideMenu());
-            $("#footer").html(renderFooter('inbox'));
-            messsages = [{
-                "other": "47",
-                "dateAgo": "5 days ago",
-                "content": "haha"
-            }];
-            $("#messagesContainer").html(await renderInbox(messsages));
-            getCurrentUserMsgs();
+
+            var contactId = location.search.split('contact=')[1];
+            if (!contactId) {
+                window.location.href = "inbox.html";
+            }
+            let otherProfile = await getProfile(contactId);
+            $("#discussionHeader").html(renderDiscussionHeader(otherProfile));
+            var starCountRef = firebase.database().ref('/' + user.id + '/' + otherProfile.id);
+            starCountRef.on('value', (snapshot) => {
+                var discussion = Object.values(snapshot.val());
+                $("#discussionContent").html(renderDiscussion(discussion, otherProfile));
+                window.scrollTo(0, document.body.scrollHeight);
+            });
+            $("#sendButton").click(
+                (e) => {
+                    var message = $('#message').val();
+                    sendMessage(otherProfile, message);
+                    $('#message').val("");
+                }
+            )
         });
     </script>
 </body>

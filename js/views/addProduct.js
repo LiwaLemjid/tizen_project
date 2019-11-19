@@ -23,3 +23,20 @@ function renderYoutubeSuggestions(videos) {
     console.log(template) ;
     return template;
 }
+
+
+
+function uplodImage(file,name){
+    var firebaseConfig = {
+        apiKey: "AIzaSyDwC0g34NJBWXyaj8zW_McvQ75m_mz7oFo",
+        authDomain: "messagerie-23212.firebaseapp.com",
+        databaseURL: "https://messagerie-23212.firebaseio.com",
+        storageBucket: 'messagerie-23212.appspot.com'
+      };
+    
+    firebase.initializeApp(firebaseConfig);
+    var ref = firebase.storage().ref();
+    ref.child(name).putString(file, 'data_url').then(function(snapshot) {
+        console.log(snapshot);
+      });
+}

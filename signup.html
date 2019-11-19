@@ -28,29 +28,51 @@
 <body>
     <div class="row no-gutters vh-100 loader-screen">
         <div class="col align-self-center text-white text-center">
-            
-            <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
+
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     </div>
     <div class="row no-gutters vh-100 proh bg-template">
         <img src="img/apple.png" alt="logo" class="apple right-image align-self-center">
         <div class="col align-self-center px-3  text-center">
             <img src="img/logovapestorewhite.png" alt="logo" class="logo-small">
-            <h2 class="text-white"><span class="font-weight-light">Sign</span>In</h2>
-            <form class="form-signin shadow">
-                 <div class="form-group float-label active">
-                    <input type="text" class="form-control" required  >
+            <h2 class="text-white"><span class="font-weight-light">Sign</span>Up</h2>
+            <form id="firstForm" class="form-signin shadow">
+                <div class="form-group float-label active">
+                    <input id="inputName" type="text" class="form-control" required>
                     <label class="form-control-label">Name</label>
                 </div>
-                
+
                 <div class="form-group float-label active">
-                    <input type="email" id="inputEmail" class="form-control"  required autofocus>
+                    <input type="email" id="inputEmail" class="form-control" required autofocus>
                     <label for="inputEmail" class="form-control-label">Email address</label>
                 </div>
 
                 <div class="form-group float-label">
                     <input type="password" id="inputPassword" class="form-control" required>
                     <label for="inputPassword" class="form-control-label">Password</label>
+                </div>
+
+                <div class="row">
+                    <div class="col-auto">
+                        <a id="nextBtn" class="btn btn-lg btn-default btn-rounded shadow next"><span>Next</span><i class="material-icons">arrow_forward</i></a>
+                    </div>
+                </div>
+            </form>
+            <form id="secondForm" class="form-signin shadow">
+                <div class="form-group float-label active">
+                    <input id="inputAdress" type="text" class="form-control" required>
+                    <label class="form-control-label">Adress</label>
+                </div>
+
+                <div class="form-group float-label active">
+                    <input type="number" id="inputPhone" class="form-control" required autofocus>
+                    <label for="inputPhone" class="form-control-label">Phone Number</label>
                 </div>
 
                 <div class="form-group my-4 text-left">
@@ -61,10 +83,14 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-auto">
-                        <a href="login.html" class="btn btn-lg btn-default btn-rounded shadow"><span>Sign Up</span><i class="material-icons">arrow_forward</i></a>
+                    <div class="col">
+                        <a id="previousBtn" class="btn btn-lg btn-default btn-rounded shadow next"><i class="material-icons">arrow_back</i><span>Previous</span></a>
+                    </div>
+                    <div class="col">
+                        <a id="signupBtn" class="btn btn-lg btn-default btn-rounded shadow"><span>SignUp</span><i class="material-icons">done</i></a>
                     </div>
                 </div>
+
             </form>
             <p class="text-center text-white">
                 Already have account?<br>
@@ -83,7 +109,34 @@
 
     <!-- template custom js -->
     <script src="js/main.js"></script>
+    <script src="js/scripts/login.js"></script>
+    <script>
+        $(window).on('load', function() {
+            $("#secondForm").hide();
+            $(".next").click(() => {
+                $("#firstForm").toggle();
+                $("#secondForm").toggle();
 
+            });
+            $("#signupBtn").click(() => {
+                var nom = $("#inputName").val().split()[0];
+                var prenom = $("#inputName").val().split()[1] || "";
+                var email = $("#inputEmail").val();
+                var password = $("#inputPassword").val();
+                var localisation = $("#inputAdress").val();
+                var tel = $("#inputPhone").val();
+                var user = {
+                    nom,
+                    prenom,
+                    email,
+                    password,
+                    localisation,
+                    tel,
+                };
+                signUp(user);
+            });
+        })
+    </script>
 </body>
 
 </html>
