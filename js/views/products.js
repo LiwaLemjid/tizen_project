@@ -1,12 +1,17 @@
 var user = JSON.parse(sessionStorage.getItem("user"));
 
 function renderProductsList(products, params) {
+    
     params = params || {};
     let productsListTemplate = '';
     category = params.category || '';
     search = params.search || '';
     if (category) {
+        console.log(category);
+        
         products = products.filter(
+            
+           
             product => product.categorie === category
         );
     } else if (search) {
@@ -14,7 +19,10 @@ function renderProductsList(products, params) {
         products = products.filter(
             product => {
                 return Object.keys(product).some(function(k) {
+                    console.log(product);
+                    if(product[k])
                     return product[k].toUpperCase().includes(search);
+                    return false;
                 });
             }
         );
@@ -73,6 +81,8 @@ function renderProduct(product) {
         </div>
         `}
 
-    </div><br><br>`;
+    </div><br><br>
+    <iframe width="360" height="115" src="https://www.youtube.com/embed/${product.videoid}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+`;
     return template;
 }

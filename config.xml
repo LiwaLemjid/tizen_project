@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="http://yourdomain/Vaping" version="1.0.0" viewmodes="maximized">
-    <access origin="*" subdomains="true"/>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/Vaping" version="1.0.0" viewmodes="maximized">
+    <access origin="*" subdomains="true"></access>
     <tizen:application id="BDlUltCOxH.Vaping" package="BDlUltCOxH" required_version="5.0"/>
+    <author email="makrem.hamani@esprit.tn">Makrem HAMANI</author>
     <content src="login.html"/>
     <feature name="http://tizen.org/feature/screen.size.all"/>
     <icon src="logovapestorewhite.png"/>
     <name>Vaping</name>
-    <tizen:profile name="mobile"/>
     <tizen:privilege name="http://tizen.org/privilege/internet"/>
+    <tizen:privilege name="http://tizen.org/privilege/filesystem.read"/>
+    <tizen:profile name="mobile"/>
     <tizen:setting context-menu="enable"/>
 </widget>

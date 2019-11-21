@@ -148,11 +148,16 @@
 
         function next() {
             fileName = fileName.split(".")[0] + Date.now();
-            uplodImage(file64, fileName);
-            product["image"] = fileName;
+            //uplodImage(file64, fileName);
+            //product["image"] = fileName;
+            product["image"] = "smok.png";
+
             product["description"] = $("#description").val();
             product["price"] = $("#price").val();
             product["category"] = $("#category").val();
+            if(product["category"] == "Liquid" )  {
+               product["image"] = "liquides.png";
+             }
             getYoutubeSuggestions(product.description, 3).done(
                 function(data) {
                     let videos = JSON.parse(data);

@@ -33,7 +33,7 @@ function addProduct(product, user) {
     /*  $sql = "INSERT INTO `articles`(`nomprenom` , `description`, `date`, `time`, `prix`, `idpublicateur` ,`categorie`, `image` 
     ,`image_publicateur`,`ville`,`lat`,`lng` ,`videoid`) VALUES
     */
-    return $.get(url + "FormulaireAddPost.php?action=ADDPOST&nomprenom=" + user.nom + " " + user.prenom + "&description=" + product.description +
+    return $.get(url + "FormulaireAddPost.php?action=ajoutProduit&nomprenom=" + user.nom + " " + user.prenom + "&description=" + product.description +
         "&prix=" + product.price + "&categorie=" + product.category + "&idpublicateur=" + user.id + "&videoid=" + product.videoId +
         "&latitude=1" + "&langitude=1" + "&ville=Chargueya" + "&image=" + product.image + "&image_publicateur=0" + "&date=0&time=0"
     );
